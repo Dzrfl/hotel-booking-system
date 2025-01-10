@@ -1,0 +1,276 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/* Login Styles */
+.login-container {
+    display: none;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.login-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+.input-group label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -10px;
+    left: 5px;
+    font-size: 14px;
+    background: white;
+    padding: 0 5px;
+    color: #2a5298;
+}
+
+/* Admin Dashboard Styles */
+.admin-dashboard {
+    min-height: 100vh;
+}
+
+.admin-nav {
+    background: #2a5298;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-content {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+.admin-sidebar {
+    width: 250px;
+    background: white;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.tab-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tab-btn.active {
+    background: #2a5298;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Consumer Section Styles */
+.consumer-nav {
+    background: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2a5298;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 2rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #2a5298;
+}
+
+/* Rooms Section */
+.rooms-section {
+    padding: 4rem 2rem;
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.room-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.room-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.room-card-content {
+    padding: 1.5rem;
+}
+
+/* Facilities Section */
+.facilities-section {
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+}
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.facility-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Booking Section */
+.booking-section {
+    padding: 4rem 2rem;
+}
+
+.booking-form {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background: #2a5298;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #1e3c72;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-content {
+        flex-direction: column;
+    }
+    
+    .admin-sidebar {
+        width: 100%;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .booking-form {
+        padding: 1rem;
+    }
+}
+
+/* Utility Classes */
+.add-btn {
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    display: none;
+}

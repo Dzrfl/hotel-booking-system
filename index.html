@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Booking System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Login Section -->
+    <div class="login-container" id="loginSection">
+      <div class="login-box">
+        <h2>Admin Login</h2>
+        <form id="loginForm">
+          <div class="input-group">
+            <input type="text" id="username" required />
+            <label>Username</label>
+          </div>
+          <div class="input-group">
+            <input type="password" id="password" required />
+            <label>Password</label>
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div class="admin-dashboard" id="adminDashboard" style="display: none">
+      <nav class="admin-nav">
+        <h2>Admin Dashboard</h2>
+        <button id="logoutBtn">Logout</button>
+      </nav>
+      <div class="admin-content">
+        <div class="admin-sidebar">
+          <button class="tab-btn active" data-tab="rooms">Manage Rooms</button>
+          <button class="tab-btn" data-tab="bookings">View Bookings</button>
+        </div>
+
+        <!-- Rooms Management -->
+        <div class="tab-content active" id="roomsTab">
+          <h3>Room Management</h3>
+          <button class="add-btn" id="addRoomBtn">Add New Room</button>
+          <div class="room-list"></div>
+        </div>
+
+        <!-- Bookings View -->
+        <div class="tab-content" id="bookingsTab">
+          <h3>Booking Management</h3>
+          <div class="booking-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Consumer Section -->
+    <div class="consumer-section" id="consumerSection">
+      <nav class="consumer-nav">
+        <div class="nav-brand">Hotel Booking</div>
+        <div class="nav-links">
+          <a href="#rooms">Rooms</a>
+          <a href="#booking">Book Now</a>
+          <a href="#" id="adminLoginLink">Admin Login</a>
+        </div>
+      </nav>
+
+      <!-- Rooms Section -->
+      <section id="rooms" class="rooms-section">
+        <h2>Our Rooms</h2>
+        <div class="room-grid"></div>
+      </section>
+
+      <!-- Booking Form -->
+      <section id="booking" class="booking-section">
+        <h2>Book Your Stay</h2>
+        <form class="booking-form">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="guestName" required />
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <select id="genderSelect" required>
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Identity Number (16 digits)</label>
+            <input type="text" id="identityNumber" required maxlength="16" />
+          </div>
+          <div class="form-group">
+            <label>Check-in Date</label>
+            <input type="date" id="checkInDate" required />
+          </div>
+          <div class="form-group">
+            <label>Duration of Stay (in days)</label>
+            <input type="number" id="durationStay" min="1" required />
+          </div>
+          <div class="form-group">
+            <label>Room Type</label>
+            <select id="roomSelect" name="roomType" required>
+              <option value="">Select a room</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Breakfast</label>
+            <input type="checkbox" id="breakfastCheckbox" />
+          </div>
+          <div class="form-group">
+            <label>Total Price</label>
+            <input type="text" id="totalPrice" readonly />
+          </div>
+          <button type="submit">Book Now</button>
+        </form>
+      </section>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
